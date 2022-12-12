@@ -21,7 +21,7 @@ public class WeatherForecastController : ControllerBase
         _memoryCache = memoryCache;
     }
     
-    private IQueryable<WeatherForecast> WeatherForecasts => Enumerable.Range(1, 5000).Select(index => new WeatherForecast
+    private IQueryable<WeatherForecast> WeatherForecasts => Enumerable.Range(1, 1000000).Select(index => new WeatherForecast
         {
             Date = DateOnly.FromDateTime(DateTime.Now.AddSeconds(index)),
             TemperatureC = Random.Shared.Next(-20, 55),
