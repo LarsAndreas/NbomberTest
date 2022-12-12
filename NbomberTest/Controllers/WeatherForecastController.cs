@@ -53,7 +53,8 @@ public class WeatherForecastController : ControllerBase
         
         // Set cache options
         var cacheOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromSeconds(30));
+                .SetSlidingExpiration(TimeSpan.FromSeconds(3))
+                .SetAbsoluteExpiration(TimeSpan.FromSeconds(20));
             
         // Set object in cache
         _memoryCache.Set(weatherForecastKey, weatherForecastCollection, cacheOptions);
@@ -94,7 +95,8 @@ public class WeatherForecastController : ControllerBase
         
         // Set cache options
         var cacheOptions = new MemoryCacheEntryOptions()
-            .SetSlidingExpiration(TimeSpan.FromSeconds(30));
+            .SetSlidingExpiration(TimeSpan.FromSeconds(3))
+            .SetAbsoluteExpiration(TimeSpan.FromSeconds(20));
             
         // Set object in cache
         _memoryCache.Set(weatherForecastKey, weatherForecastCollection, cacheOptions);
